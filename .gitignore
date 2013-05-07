@@ -7,27 +7,3 @@ hs*log
 *.orig
 .idea
 *.project
-
-# ignore the gems folder after adding the bundler gem
-src/test/gems
-service/src/test/gems
-com.sun.aas.instanceRoot_IS_UNDEFINED
-
-#ignore contracts holding directories , as it points to a contracts repository and not to be tracked / modified or committed
-
-*/target
-*/*.wadl
-*/*.iml
-*/*.ipr
-*/*.iws
-*/*lor
-*/hs*log
-*/*.orig
-*/.idea
-*/com.sun.aas.instanceRoot_IS_UNDEFINED
-
-#ignore version backups
-
-*.versionsBackup
-
-.DS_Store
