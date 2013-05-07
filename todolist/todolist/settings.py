@@ -107,7 +107,7 @@ ROOT_URLCONF = 'todolist.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'todolist.wsgi.application'
 
-TEMPLATE_DIRS = ('C:/Users/nikh0881/IdeaProjects/Django_todolist/todolist/templates',)
+TEMPLATE_DIRS = ('C:/Users/nikh0881/IdeaProjects/Django_todolist/todolist/todolist/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -116,10 +116,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'todolist',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    #'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    #'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
