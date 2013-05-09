@@ -50,3 +50,9 @@ class TodosHandler(BaseHandler):
 
         todoObj.save()
         return todoObj
+
+    @raise_404
+    def delete(self, request, todoitem_id):
+        todoObj = TodoItem.objects.get(id=todoitem_id, user=request.user)
+        todoObj.delete()
+        return rc.DELETED # returns HTTP 204
