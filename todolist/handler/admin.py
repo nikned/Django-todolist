@@ -6,7 +6,7 @@ from todolist.handler.models import TodoItem
 
 
 class TodoItemAdmin(admin.ModelAdmin):
-    fields = ['todo', 'priority']
+    fields = ['todo', 'priority','category','status','created']
     
     def queryset(self, request):
         qs = super(TodoItemAdmin, self).queryset(request)
@@ -19,7 +19,7 @@ class TodoItemAdmin(admin.ModelAdmin):
         obj.save()
     
     
-#admin.site.unregister(User)
+
 admin.site.unregister(Group)
 admin.site.unregister(Site)
 
