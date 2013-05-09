@@ -35,3 +35,18 @@ class TodosHandler(BaseHandler):
         else:
             todoitem = TodoItem.objects.filter(user=request.user)
         return todoitem
+
+
+
+    @require_extended
+    def update(self, request, todoitem_id):
+        data = request.data
+        todoObj = TodoItem.objects.get(id=todoitem_id, user=request.user)
+        todoObj.todo = data['todo']
+        todoObj.created=data['created']
+        todoObj.priority = data['priority']
+        todoObj.status=data['status']
+        todoObj.category= data['category']
+
+        todoObj.save()
+        return todoObj
