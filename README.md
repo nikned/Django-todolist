@@ -25,3 +25,11 @@ DATABASES = {
 }
 ```
 Step2: run command python manage.py syncdb
+
+
+CSRF Token : Needed for authentication , as every api call is to be done by an authenticated user in django
+
+```
+default token : X-CSRFToken: bFzhzpKhsasg1vRiwjVa3ZyXHGDmeS1U
+ ```
+
