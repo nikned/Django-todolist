@@ -1,9 +1,4 @@
-from django.http import HttpResponse
-from django.template.response import TemplateResponse
 from django.shortcuts import redirect
-from django.contrib import messages
-from django.views.decorators.http import require_POST
-from django import forms
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import Group, Permission
 from django.contrib.auth.forms import UserCreationForm
@@ -16,16 +11,10 @@ from django.conf import settings
 # Create your views here.
 
 def index(request): 
-    print request.user
-    if request.user.is_authenticated():
-        return redirect("/admin/")
-    else:
         url = reverse('django.contrib.auth.views.login')
         return redirect(url, template_name='login.html')
-        return HttpResponse("zzzz")
 
-
-
+#this method creates the csrf token for authentication of the user
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -43,5 +32,5 @@ def register(request):
     else:
         form = UserCreationForm()
     data = {'form': form}
-    data.update(csrf(request)) # WTF !!!
+    data.update(csrf(request))
     return render_to_response("register.html", data)
