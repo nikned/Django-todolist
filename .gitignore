@@ -1,10 +1,6 @@
 *.iml
-*.ipr
-*.iws
-target
-lor
-hs*log
-*.orig
 .idea
 *.project
 *.pyc
+**/datastore
+*.sqlite3
