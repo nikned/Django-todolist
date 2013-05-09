@@ -28,27 +28,6 @@ class TodosHandler(BaseHandler):
         #resp = rc.CREATED
         return todoObj
 
-
-    @require_extended
-    def update(self, request, todoitem_id):
-        data = request.data
-        todoObj = TodoItem.objects.get(id=todoitem_id, user=request.user)
-        todoObj.todo = data['todo']
-        todoObj.created=data['created']
-        todoObj.priority = data['priority']
-        todoObj.status=data['status']
-        todoObj.category= data['category']
-
-        todoObj.save()
-        return todoObj
-
-    @raise_404
-    def delete(self, request, todoitem_id):
-        todoObj = TodoItem.objects.get(id=todoitem_id, user=request.user)
-        todoObj.delete()
-        return rc.DELETED # returns HTTP 204
-
-
     @raise_404
     def read(self, request, todoitem_id=None):
         if todoitem_id:
@@ -56,8 +35,3 @@ class TodosHandler(BaseHandler):
         else:
             todoitem = TodoItem.objects.filter(user=request.user)
         return todoitem
-
-
-
-
-
